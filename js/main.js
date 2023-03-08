@@ -1,4 +1,4 @@
-
+const domTeam = document.getElementById('team');
 
 //array di oggetti
 const arrayOggetti = [
@@ -33,15 +33,25 @@ const arrayOggetti = [
         'immagine' : 'barbara-ramos-graphic-designer.jpg',
     },
 ];
-
 console.log(arrayOggetti);
-
+//Scorro l'array
 for (var i = 0; i < arrayOggetti.length; i++) {
-    const classeCorrente = arrayOggetti[i];
-    
-	console.log('Persona:');
-
-    for (var key in classeCorrente) {
-        console.log(key + ': ' + classeCorrente[key]);
+    const oggettoCorrente = arrayOggetti[i];
+    //una volta entrato nell'arrai in posizione [i] scorro le key dell'oggetto
+    for (var key in oggettoCorrente) {
+        //metto in una variabile il valore dell'oggetto in posizione [key]
+        const oggettoEstratto = oggettoCorrente[key];
+        //metto in una variabile la funzione per creare un'elemento nel DOM
+        const box = newBox(oggettoEstratto);
+        //collego il DOM
+        domTeam.append(box);
+        console.log(key + ': ' + oggettoCorrente[key]);
     }
+}
+
+function newBox (contenuto){
+    const box = document.createElement('span');
+    box.classList.add('d-flex');
+    box.innerHTML = contenuto;
+    return box;
 }
