@@ -50,8 +50,11 @@ for (var i = 0; i < arrayOggetti.length; i++) {
 }
 
 function newBox (contenuto){
+    //metto in una variabile un elemento di tipo div
     const box = document.createElement('span');
+    //aggiungo una classe
     box.classList.add('d-flex');
+    //aggiungo un contenuto all'interno del div 
     box.innerHTML = contenuto;
     return box;
 }
