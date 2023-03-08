@@ -33,3 +33,15 @@ const arrayOggetti = [
         'immagine' : 'barbara-ramos-graphic-designer.jpg',
     },
 ];
+
+console.log(arrayOggetti);
+
+for (var i = 0; i < arrayOggetti.length; i++) {
+    const classeCorrente = arrayOggetti[i];
+    
+	console.log('Persona:');
+
+    for (var key in classeCorrente) {
+        console.log(key + ': ' + classeCorrente[key]);
+    }
+}
